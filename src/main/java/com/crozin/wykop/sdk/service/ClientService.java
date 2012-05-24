@@ -15,7 +15,7 @@ import com.crozin.wykop.sdk.util.CollectionsUtils;
 
 public class ClientService extends AbstractService {
 	public enum EntryFilter {
-		ALL ("index"), OBSERVED ("observing"), OWN ("mine"), RECIEVED ("received");
+		ALL ("index"), OBSERVED ("observing"), OWN ("mine"), RECEIVED ("received");
 		
 		private final String method;
 		
