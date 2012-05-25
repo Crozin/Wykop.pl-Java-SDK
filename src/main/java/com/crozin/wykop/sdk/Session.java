@@ -1,6 +1,7 @@
 package com.crozin.wykop.sdk;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -107,14 +108,17 @@ public class Session {
 			logger.debug("Request URL: {}", url);
 			
 			HttpURLConnection conn = getConnection(cmd, url);
+			InputStream is = conn.getInputStream();
+			String response = null;
 			
-			StringBuilder responseBuilder = new StringBuilder();
-			int c = 0;
-			while ((c = conn.getInputStream().read()) != -1) {
-				responseBuilder.append((char) c);
+			try {
+				response = new java.util.Scanner(is).useDelimiter("\\A").next();
+			} catch (java.util.NoSuchElementException e) {
+				response = "";
+			} finally {
+				is.close();
 			}
 			
-			String response = responseBuilder.toString();
 			logger.debug("Response: {}", response);
 			
 			checkForError(response);
