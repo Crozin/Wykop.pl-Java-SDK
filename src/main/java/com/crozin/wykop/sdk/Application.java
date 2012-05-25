@@ -1,17 +1,27 @@
 package com.crozin.wykop.sdk;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.crozin.wykop.sdk.exception.ApiException;
 import com.crozin.wykop.sdk.exception.ConnectionException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.databind.type.MapType;
 
 public class Application {
+	private static final Logger logger = LoggerFactory.getLogger(Application.class);
+	
 	final String publicKey;
 	final String privateKey;
 	String userKey;
@@ -24,7 +34,16 @@ public class Application {
 		this.privateKey = privateKey;
 		
 		om = new ObjectMapper();
-		om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		om.addHandler(new DeserializationProblemHandler() {
+			@Override
+			public boolean handleUnknownProperty(DeserializationContext ctxt, JsonParser jp, JsonDeserializer<?> deserializer, Object beanOrClass, String propertyName) throws IOException, JsonProcessingException {
+				logger.info("Unknow property \"{}\" on during deserialization of {}", propertyName, beanOrClass.getClass().getCanonicalName());
+				
+				ctxt.getParser().skipChildren();
+				
+				return true;
+			}
+		});
 		
 		mapType = om.getTypeFactory().constructMapType(LinkedHashMap.class, String.class, String.class);
 	}
