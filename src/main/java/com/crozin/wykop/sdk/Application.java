@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.crozin.wykop.sdk.exception.ApiException;
 import com.crozin.wykop.sdk.exception.ConnectionException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.MapType;
 
@@ -23,6 +24,8 @@ public class Application {
 		this.privateKey = privateKey;
 		
 		om = new ObjectMapper();
+		om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		
 		mapType = om.getTypeFactory().constructMapType(LinkedHashMap.class, String.class, String.class);
 	}
 	
