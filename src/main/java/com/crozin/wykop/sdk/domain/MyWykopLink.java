@@ -103,7 +103,7 @@ public class MyWykopLink extends MyWykop {
 	
 	@JsonProperty
 	@SuppressWarnings("unused")
-	private URL author_avatar, author_avatar_med, author_avatar_lo;
+	private URL author_avatar, author_avatar_med, author_avatar_lo, author_avatar_big;
 	
 	public Integer getId() {
 		return id;

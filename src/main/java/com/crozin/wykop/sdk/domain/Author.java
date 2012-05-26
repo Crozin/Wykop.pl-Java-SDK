@@ -22,6 +22,8 @@ public class Author {
 	
 	private URL mediumQualityAvatar;
 	
+	private URL highQualityAvatar;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -44,6 +46,8 @@ public class Author {
 			return lowQualityAvatar;
 		case MEDIUM:
 			return mediumQualityAvatar;
+		case HIGH:
+			return highQualityAvatar;
 		default:
 			return defaultAvatar;
 		}

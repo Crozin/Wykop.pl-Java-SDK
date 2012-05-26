@@ -14,6 +14,7 @@ public class DeserializationUtils {
 		authorFields.put("_avatar", "defaultAvatar");
 		authorFields.put("_avatar_lo", "lowQualityAvatar");
 		authorFields.put("_avatar_med", "mediumQualityAvatar");
+		authorFields.put("_avatar_big", "highQualityAvatar");
 		authorFields.put("_group", "group");
 		authorFields.put("_sex", "gender");
 	}

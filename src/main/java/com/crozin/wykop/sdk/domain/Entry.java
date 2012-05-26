@@ -41,7 +41,7 @@ public class Entry extends MyWykop {
 	
 	@JsonProperty 
 	@SuppressWarnings("unused")
-	private URL author_avatar, author_avatar_med, author_avatar_lo;
+	private URL author_avatar, author_avatar_med, author_avatar_lo, author_avatar_big;
 	
 	@JsonProperty 
 	@SuppressWarnings("unused")
@@ -53,7 +53,7 @@ public class Entry extends MyWykop {
 	
 	@JsonProperty 
 	@SuppressWarnings("unused")
-	private URL receiver_avatar, receiver_avatar_med, receiver_avatar_lo;
+	private URL receiver_avatar, receiver_avatar_med, receiver_avatar_lo, receiver_avatar_big;
 	
 	public Integer getId() {
 		return id;
