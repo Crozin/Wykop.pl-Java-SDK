@@ -27,7 +27,7 @@ public class CollectionsUtils {
 			sb.append(entry.getKey().toString());
 			sb.append(keyValueSeparator);
 			sb.append(entry.getValue().toString());
-			sb.append(keyValueSeparator);
+			sb.append(entrySeparator);
 		}
 		
 		if (sb.length() > 0 && entrySeparator.length() > 0) {
