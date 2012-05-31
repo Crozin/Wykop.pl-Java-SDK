@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
 public class DateDeserializer extends JsonDeserializer<Date> {
-	private final SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss"); 
+	private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 	
 	@Override
 	public Date deserialize(JsonParser jp, DeserializationContext ctxt) {
