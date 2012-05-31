@@ -38,7 +38,7 @@ public class TestRange {
 	
 	@Parameters
 	public static Collection<Object[]> data() throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
 		Object[][] dates = new Object[][] {
 				{ null, sdf.parse("2011-12-12"), false },
