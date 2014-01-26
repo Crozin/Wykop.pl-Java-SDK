@@ -10,6 +10,33 @@ These classes could be divided into three main packages:
 
 Services are available only if the SDK session is associated with some account. The only exception is `SearchService`, which is available for annonymous (read-only) session.
 
+---
+
+SDK is available through its own Maven repository. In order to use it, add following declaration to your `pom.xml` file:
+
+    <repositories>
+		<repository>
+			<id>wykop.pl-java-sdk-mvn-repository</id>
+			<url>https://raw.github.com/Crozin/Wykop.pl-Java-SDK/mvn-repo/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+    
+Now you can simply add the dependency:
+
+    <dependencies>
+        ...
+    
+		<dependency>
+			<groupId>com.crozin</groupId>
+			<artifactId>com.crozin.wykop.sdk</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
 Setting up a new session (connection)
 -------------------------------------
 
@@ -64,7 +91,7 @@ Examples
 ### Open a new authenticated session and add a new link:
 
     AuthenticatedSession session = app.openSession("account-key");
-	    
+        
     LinkCandidate link = new LinkCandidate();
     link.setUrl(new URL("http://example.org/"));
     link.setTitle("Foobar");
