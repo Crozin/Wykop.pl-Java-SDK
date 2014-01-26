@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.crozin</groupId>
 	<artifactId>com.crozin.wykop.sdk</artifactId>
-	<version>1.0.0-ALPHA</version>
+	<version>1.0.0</version>
 
 	<name>Wykop.pl SDK</name>
 	<description>Unofficial SDK for Wykop.pl API</description>
@@ -80,19 +80,17 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.8</version>
 				<configuration>
-					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-					<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+					<message>Maven artifacts for ${project.version}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+					<branch>refs/heads/mvn-repo</branch>
 					<includes>
 						<include>**/*</include>
 					</includes>
-					<repositoryName>Wykop.pl-Java-SDK</repositoryName>      <!-- github repo name -->
-					<repositoryOwner>crozin</repositoryOwner>    <!-- github username -->
+					<repositoryName>Wykop.pl-Java-SDK</repositoryName>
+					<repositoryOwner>crozin</repositoryOwner>
 				</configuration>
 				<executions>
-					<!-- run site-maven-plugin's 'site' target as part of the build's normal 
-						'deploy' phase -->
 					<execution>
 						<goals>
 							<goal>site</goal>
