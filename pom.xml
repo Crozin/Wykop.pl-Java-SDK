@@ -27,8 +27,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	
-		<com.fasterxml.jackson.version>2.0.0</com.fasterxml.jackson.version>
-		<org.slf4j.version>1.6.4</org.slf4j.version>
+		<com.fasterxml.jackson.version>2.3.1</com.fasterxml.jackson.version>
+		<junit.version>4.11</junit.version>
+		<org.slf4j.version>1.7.5</org.slf4j.version>
 	</properties>
 	
 	<dependencies>
@@ -57,8 +58,8 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
-			<scope>provided</scope>
+			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
