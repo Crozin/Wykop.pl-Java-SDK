@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.crozin</groupId>
+  <artifactId>com.crozin.wykop.sdk</artifactId>
+  <versioning>
+    <release>1.0.0-ALPHA</release>
+    <versions>
+      <version>1.0.0-ALPHA</version>
+    </versions>
+    <lastUpdated>20140126195605</lastUpdated>
+  </versioning>
+</metadata>
