@@ -94,15 +94,12 @@ public class MyWykopLink extends MyWykop {
 	private Integer[] user_lists;
 	
 	@JsonProperty
-	@SuppressWarnings("unused")
 	private String author, author_sex;
 	
 	@JsonProperty
-	@SuppressWarnings("unused")
 	private Integer author_group;
 	
 	@JsonProperty
-	@SuppressWarnings("unused")
 	private URL author_avatar, author_avatar_med, author_avatar_lo, author_avatar_big;
 	
 	public Integer getId() {

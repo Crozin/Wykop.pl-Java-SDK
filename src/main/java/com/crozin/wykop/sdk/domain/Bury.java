@@ -47,16 +47,13 @@ public class Bury {
 	@JsonDeserialize(using = DateDeserializer.class)
 	private Date date;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private String author, author_sex;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private Integer author_group;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private URL author_avatar, author_avatar_med, author_avatar_lo;
 	
 	public Author getAuthor() {

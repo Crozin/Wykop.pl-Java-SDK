@@ -31,28 +31,22 @@ public class Entry extends MyWykop {
 	
 	private List<EntryComment> comments;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private String author, author_sex;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private Integer author_group;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private URL author_avatar, author_avatar_med, author_avatar_lo, author_avatar_big;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private String receiver, receiver_sex;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private Integer receiver_group;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private URL receiver_avatar, receiver_avatar_med, receiver_avatar_lo, receiver_avatar_big;
 	
 	public Integer getId() {

@@ -25,16 +25,13 @@ public class EntryComment {
 
 	private Boolean blocked;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private String author, author_sex;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private Integer author_group;
 	
-	@JsonProperty 
-	@SuppressWarnings("unused")
+	@JsonProperty
 	private URL author_avatar, author_avatar_med, author_avatar_lo, author_avatar_big;
 	
 	public Integer getId() {
