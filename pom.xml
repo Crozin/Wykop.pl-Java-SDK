@@ -1,9 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.crozin</groupId>
 	<artifactId>com.crozin.wykop.sdk</artifactId>
 	<version>1.0.0-ALPHA</version>
-	
+
 	<name>Wykop.pl SDK</name>
 	<description>Unofficial SDK for Wykop.pl API</description>
 	<url>https://github.com/Crozin/Wykop-Java-SDK</url>
@@ -15,7 +16,7 @@
 			<url>https://github.com/Crozin/Wykop.pl-Java-SDK/blob/master/LICENSE</url>
 		</license>
 	</licenses>
-	
+
 	<developers>
 		<developer>
 			<id>krzysieklabus</id>
@@ -23,15 +24,16 @@
 			<email>krzysieklabus@gmail.com</email>
 		</developer>
 	</developers>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	
+		<github.global.server>github</github.global.server>
+
 		<com.fasterxml.jackson.version>2.3.1</com.fasterxml.jackson.version>
 		<junit.version>4.11</junit.version>
 		<org.slf4j.version>1.7.5</org.slf4j.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -54,7 +56,7 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${org.slf4j.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -62,4 +64,41 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8</version>
+				<configuration>
+					<message>Maven artifacts for ${project.version}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+					<branch>refs/heads/mvn-repo</branch>
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<repositoryName>Wykop.pl-Java-SDK</repositoryName>
+					<repositoryOwner>crozin</repositoryOwner>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
