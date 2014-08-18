@@ -1,5 +1,11 @@
 package com.crozin.wykop.sdk.util;
 
+/**
+ * 
+ * @author Crozin
+ *
+ * @param <T>
+ */
 public class Range<T extends Comparable<T>> {
 	private final T lowerBound;
 	private final T upperBound;

@@ -58,6 +58,7 @@ public class TestCollectionsUtils {
 		assertEquals("A", CollectionsUtils.join(singleElementCollection, ","));
 		assertEquals("A,B", CollectionsUtils.join(twoElementsCollection, ","));
 		assertEquals("A,B,C", CollectionsUtils.join(multipleElementsCollection, ","));
+		assertEquals("ABC", CollectionsUtils.join(multipleElementsCollection, ""));
 	}
 	
 	@Test
@@ -74,6 +75,7 @@ public class TestCollectionsUtils {
 		assertEquals("A,1", CollectionsUtils.join(singleElementMap, ",", "/"));
 		assertEquals("A,1/B,2", CollectionsUtils.join(twoElementsMap, ",", "/"));
 		assertEquals("A,1/B,2/C,3", CollectionsUtils.join(multipleElementsMap, ",", "/"));
+		assertEquals("A1B2C3", CollectionsUtils.join(multipleElementsMap, "", ""));
 	}
 	
 	@Test

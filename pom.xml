@@ -32,6 +32,7 @@
 		<com.fasterxml.jackson.version>2.4.1</com.fasterxml.jackson.version>
 		<junit.version>4.11</junit.version>
 		<org.slf4j.version>1.7.7</org.slf4j.version>
+		<com.tngtech.junit-dataprovider.version>1.9.1</com.tngtech.junit-dataprovider.version>
 	</properties>
 
 	<dependencies>
@@ -61,6 +62,13 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.tngtech.java</groupId>
+			<artifactId>junit-dataprovider</artifactId>
+			<version>${com.tngtech.junit-dataprovider.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
