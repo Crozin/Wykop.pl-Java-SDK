@@ -29,9 +29,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<github.global.server>github</github.global.server>
 
-		<com.fasterxml.jackson.version>2.3.1</com.fasterxml.jackson.version>
+		<com.fasterxml.jackson.version>2.4.1</com.fasterxml.jackson.version>
 		<junit.version>4.11</junit.version>
-		<org.slf4j.version>1.7.5</org.slf4j.version>
+		<org.slf4j.version>1.7.7</org.slf4j.version>
 	</properties>
 
 	<dependencies>
