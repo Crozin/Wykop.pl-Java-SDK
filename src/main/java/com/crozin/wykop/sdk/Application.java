@@ -37,7 +37,7 @@ public class Application {
 		om.addHandler(new DeserializationProblemHandler() {
 			@Override
 			public boolean handleUnknownProperty(DeserializationContext ctxt, JsonParser jp, JsonDeserializer<?> deserializer, Object beanOrClass, String propertyName) throws IOException, JsonProcessingException {
-				logger.info("Unknow property \"{}\" during deserialization of {}", propertyName, beanOrClass.getClass().getCanonicalName());
+				logger.warn("Unknow property \"{}\" during deserialization of {}", propertyName, beanOrClass.getClass().getCanonicalName());
 				
 				ctxt.getParser().skipChildren();
 				

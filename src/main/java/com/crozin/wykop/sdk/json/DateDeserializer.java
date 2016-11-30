@@ -1,4 +1,5 @@
 package com.crozin.wykop.sdk.json;
+
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

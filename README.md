@@ -33,7 +33,7 @@ Now you can simply add the dependency:
 		<dependency>
 			<groupId>com.crozin</groupId>
 			<artifactId>com.crozin.wykop.sdk</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 

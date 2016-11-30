@@ -1,7 +1,6 @@
 package com.crozin.wykop.sdk;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -14,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Scanner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +42,7 @@ import com.fasterxml.jackson.databind.type.CollectionType;
 
 public class Session {
 	private static final Logger logger = LoggerFactory.getLogger(Session.class);
-	private static final String USER_AGENT_SIGNATURE = "com.crozin.wykop.sdk SDK/1.0.0-ALPHA";
+	private static final String USER_AGENT_SIGNATURE = "com.crozin.wykop.sdk SDK/1.0.1";
 	private static final String CHARSET = "UTF-8";
 	
 	protected Application sdk;
@@ -105,18 +105,21 @@ public class Session {
 	public String execute(Command cmd) {
 		try {
 			URL url = getUrl(cmd);
-			logger.debug("Request URL: {}", url);
 			
-			HttpURLConnection conn = getConnection(cmd, url);
-			InputStream is = conn.getInputStream();
+			logger.debug("Requesting URL: {}", url);
+			
 			String response = null;
+			Scanner scanner = null;
 			
 			try {
-				response = new java.util.Scanner(is).useDelimiter("\\A").next();
+				scanner = new java.util.Scanner(getConnection(cmd, url).getInputStream());
+				response = scanner.useDelimiter("\\A").next();
 			} catch (java.util.NoSuchElementException e) {
 				response = "";
 			} finally {
-				is.close();
+				if (scanner != null) {
+					scanner.close();
+				}
 			}
 			
 			logger.debug("Response: {}", response);

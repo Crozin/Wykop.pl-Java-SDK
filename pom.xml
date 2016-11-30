@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.crozin</groupId>
 	<artifactId>com.crozin.wykop.sdk</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<name>Wykop.pl SDK</name>
 	<description>Unofficial SDK for Wykop.pl API</description>
