@@ -30,7 +30,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<github.global.server>github</github.global.server>
 
-		<com.fasterxml.jackson.version>2.8.5</com.fasterxml.jackson.version>
+		<com.fasterxml.jackson.version>2.12.1</com.fasterxml.jackson.version>
 		<junit.version>4.12</junit.version>
 		<org.slf4j.version>1.7.21</org.slf4j.version>
 		<com.tngtech.junit-dataprovider.version>1.12.0</com.tngtech.junit-dataprovider.version>
